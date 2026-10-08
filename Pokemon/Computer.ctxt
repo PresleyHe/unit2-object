@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Computer
+comment1.params=name
+comment1.target=Computer(java.lang.String)
+comment2.params=p
+comment2.target=void\ setPokemon(Pokemon)
+comment3.params=
+comment3.target=void\ switchPokemon()
+comment4.params=name\ enemy
+comment4.target=void\ attack(java.lang.String,\ User)
+numComments=5

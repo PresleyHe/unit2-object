@@ -15,22 +15,44 @@ public class Pokemon extends Actor
     private boolean outStatus;
     private Attack attack;
     private String type;
-    
+    public Pokemon(int hp, int ap, String name, String attack, String type){
+        this.hp = hp;
+        this.ap = ap;
+        this.name = name;
+        this.img = new GreenfootImage(name.toLowerCase() + ".png");
+        setImage(this.img);
+        this.attack = new Attack(attack);
+        this.type=type;
+        this.outStatus = false;
+        this.img.scale(160, 160);
+    }
     public String getType(){
         return this.type;
     }
     public void attack(String aName, User enemy){
+        // takeDamage(enemy.getPokemon().getAPower(aName, enemy));
+        enemy.getPokemon().takeDamage(getAPower(aName, enemy));
     }
     public void takeDamage(int amount ){
         this.hp -= amount;
+        if(this.hp < 0){
+            this.hp=0;
+            outStatus = true;
+        }
     }
     public void heal(){
-        this.hp ++;
+        this.hp = this.hp+20;
     }
-    public void printAttack(){
+    public Attack getAttack(){
+        return this.attack;
+    }
+    public boolean isOut(){
+        
+        return this.outStatus;
     }
     public int getAPower(String aName, User enemy){
-        return 0;
+        Attack a = enemy.getPokemon().getAttack();
+        return a.getPower();
     }
     /**
      * Constructor for objects of class Pokemon
@@ -48,6 +70,7 @@ public class Pokemon extends Actor
     public int sampleMethod(int y)
     {
         // put your code here
+        // y = x + y
         return  y;
     }
 }

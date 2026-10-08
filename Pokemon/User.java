@@ -14,12 +14,40 @@ public class User extends Actor
      */
     private String name;
     private Pokemon pokemon;
+    
+    public User(String name){
+        this.name = name;
+        this.pokemon = null;
+        GreenfootImage img = new GreenfootImage( name.toUpperCase()+" ", 28, Color.WHITE, Color.BLUE);
+        this.setImage(img);
+    }
+    public void setPokemon(Pokemon p){
+        this.pokemon = p;
+        
+    }
+    public Pokemon getPokemon(){
+        return this.pokemon;
+    }
+    public void switchPokemon(Pokemon p){
+        setPokemon(p);
+    }
+    public void heal(){
+        if(this.pokemon != null){
+            this.pokemon.heal();
+        }
+    }
+    public void attack(String name, User enemy)
+    {
+        if (this.pokemon != null){
+            this.pokemon.attack(name, enemy);
+        }
+    }
+    public boolean isEndGame(){
+        return false;
+    }
     public void act()
     {
         // Add your action code here.
-    }
-    public User(String name){
-        
     }
     public Pokemon setPokemon(){
         return new Pokemon();

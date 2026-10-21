@@ -15,11 +15,14 @@ public class FrogSimulation {
     }
     public boolean simulate(){
         boolean result = false;
-        int num = hopDistance() * this.maxHops;
+        int num = 0;
+        for(int i = 0; i<=this.maxHops;i ++){
+            num += hopDistance();
+            // System.out.println(num);
+        }
         if (num >= this.goalDistance){
             result = true;
         }
-        // System.out.println(num);
         return result;
     }
 }

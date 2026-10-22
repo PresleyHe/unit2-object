@@ -25,4 +25,22 @@ public class FrogSimulation {
         }
         return result;
     }
+    public double runSimulation(int num){
+        int gotFalse = 0;
+        int gotTrue = 0;
+        for(int i = 0; i < num; i ++){
+            boolean gotboolean = simulate();
+            if (gotboolean == true){
+                gotTrue += 1;
+            } else{
+                gotFalse += 1;
+            }
+            System.out.println(gotboolean);
+        }
+        //in case of zero division
+        if(gotFalse == 0){
+            gotFalse = 1;
+        }
+        return (double)gotTrue/gotFalse;
+    }
 }

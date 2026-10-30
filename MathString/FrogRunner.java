@@ -1,11 +1,14 @@
 public class FrogRunner {
-    public static void main(String args[]){
+    public static void main(String[] args) {
         FrogSimulation sim = new FrogSimulation(24, 5);
-        // System.out.println(sim.simulate());
-        // System.out.println(sim.simulate());
-        // System.out.println(sim.simulate());
-        // System.out.println(sim.simulate());
-        // System.out.println(sim.simulate());
-        System.out.println( sim.runSimulation(5));
+        System.out.println(sim.simulate());
+        System.out.println(sim.simulate());
+        System.out.println(sim.simulate());
+        System.out.println(sim.simulate());
+        System.out.println(sim.simulate());
+
+
+
     }
+    
 }
